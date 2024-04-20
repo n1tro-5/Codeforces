@@ -27,15 +27,23 @@ signed main()
     int t; cin >> t;
     while(t--)
     {
-    	string s; cin >> s;
+    	int n; cin >> n;
 
-    	if(s == "abc" || s == "acb" || s == "bac" || s == "cba")
-    		cout << "YES" << endl;
-    	else
-    		cout << "NO" << endl;
-    }
+    	vector<int> a(n);
+    	for(int i = 0; i < n; i++) cin >> a[i];
 
-    
+    	int res = 1;
+    	int min = *min_element(a.begin(), a.end()); 
+    	// cout << "min: " << min << endl;
+
+    	sort(a.begin(), a.end());
+    	// for(auto x : a) cout << x << ' ';
+
+    	a[0] += 1;
+    	for(int i = 0; i < n; i++) res *= a[i];
+
+    	cout << res << endl;
+    }   
     return 0;
 }
 

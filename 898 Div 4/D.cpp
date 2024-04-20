@@ -27,12 +27,23 @@ signed main()
     int t; cin >> t;
     while(t--)
     {
-    	string s; cin >> s;
+    	long long n, k; 
+    		cin >> n >> k;
+    	string s;
+    		cin >> s;
+    	vector<int> sq;
+    	int res = 0;
 
-    	if(s == "abc" || s == "acb" || s == "bac" || s == "cba")
-    		cout << "YES" << endl;
-    	else
-    		cout << "NO" << endl;
+    	for(int i = 0; i < n; i++)
+    	{
+    		if(s[i] == 'B') 
+    		{
+    			res ++;
+    			i += (k - 1);
+    		}
+    	}
+    	cout << res << endl;
+
     }
 
     
